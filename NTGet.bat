@@ -9,7 +9,7 @@ echo 中文(简体)帮助：
 echo NTGet 版本 %ntGet_Version% 基于 GPL 3.0 协议
 echo Based On cURL
 echo PixelWine@Github PixelWine@Gitee
-echo NTGet -h （或者不加参数)：显示中英文帮助
+echo NTGet --help （或者不加参数)：显示中英文帮助
 echo NTGet install
 echo If there is a problem with the display of Chinese characters, please refer to the help in English and feedback to 
 echo https://github.com/pixelwine/NTGet/issues/1 (Chinese users submit to https://gitee.com/pixelwine/NTGet/issues/I1HEC7)
