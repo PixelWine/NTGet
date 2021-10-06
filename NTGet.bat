@@ -1,36 +1,34 @@
 @echo off
-rem ËµÃ÷£ºËùÓĞ´øÓĞsample×ÖÑÛµÄ¾ùÎªÊ¾Àı£¨ÈçX:\Sample£©
-rem ÏÂÃæÒ»ĞĞÖ¸¶¨Èí¼ş°²×°Î»ÖÃ(Ä¬ÈÏÎªX:\Sample)
+set ntGet_Version=1.1
 set startup_dir=%cd%
 set path=%path%;%cd%;%cd%\source
-cd D:\
 if "%1"=="--help" goto help
 if "%1"=="install" goto install
 :help
-echo ÖĞÎÄ(¼òÌå)°ïÖú£º
-echo NTGet °æ±¾1.0 »ùÓÚGPL 3.0Ğ­Òé
+echo ä¸­æ–‡(ç®€ä½“)å¸®åŠ©ï¼š
+echo NTGet ç‰ˆæœ¬ %ntGet_Version% åŸºäº GPL 3.0 åè®®
 echo Based On cURL
 echo PixelWine@Github PixelWine@Gitee
-echo NTGet -h £¨»òÕß²»¼Ó²ÎÊı)£ºÏÔÊ¾ÖĞÓ¢ÎÄ°ïÖú
+echo NTGet -h ï¼ˆæˆ–è€…ä¸åŠ å‚æ•°)ï¼šæ˜¾ç¤ºä¸­è‹±æ–‡å¸®åŠ©
 echo NTGet install
 echo If there is a problem with the display of Chinese characters, please refer to the help in English and feedback to 
 echo https://github.com/pixelwine/NTGet/issues/1 (Chinese users submit to https://gitee.com/pixelwine/NTGet/issues/I1HEC7)
 pause
+goto end
 :install
-echo ÕıÔÚ¸üĞÂÔ´Êı¾İ,ÇëÉÔºó
-curl -O http://ntget.pixelwine.top/source-update/source >nul
-%2 >nul
+echo æ­£åœ¨æ›´æ–°æºæ•°æ®,è¯·ç¨å...
+curl -O https://raw.githubusercontent.com/PixelWine/NTGet/31dfb521c2277b202de7692844c32d7de23ed5e3/source/source-update/SOURCE >nul
 if not exist %2.bat goto install_error_0
+%2 >nul
 :install_error_0
 echo.
 echo.
 echo.
-echo ERR:Ã»ÓĞÕıÈ·¶ÁÈ¡ %2 µÄÔ´Â·¾¶
-echo HELP:µ¼ÖÂÕâ¸öÎÊÌâµÄÔ­Òò¿ÉÄÜÊÇ./source Ä¿Â¼ÄÚÈÔÎ´ÊÕÂ¼¸ÃÔ´
-echo TIPS:Çëµ½NTGet µÄGitee Ö÷Ò³(https://gitee.com/pixelwine/NTGet/issues)Ìá½» issues ±¨¸æ¸ÃÎÊÌâ
-echo TIPS:»òÕß¿ÉÒÔ½«´Ë´¦½ØÍ¼Ìá½» issues
-echo ERR_CODE:NOT_FOUND_BATCH_FILE
-echo NOT_FOUND:%2.bat
+echo [ERR]  æ²¡æœ‰æ­£ç¡®è¯»å– %2 çš„æºè·¯å¾„
+echo [HELP] å¯¼è‡´è¿™ä¸ªé—®é¢˜çš„åŸå› å¯èƒ½æ˜¯ %cd%\source ç›®å½•å†…ä»æœªæ”¶å½•è¯¥æº
+echo [TIPS] è¯·åˆ° NTGet çš„ Gitee ä¸»é¡µ(https://gitee.com/pixelwine/NTGet/issues)æäº¤ issues æŠ¥å‘Šè¯¥é—®é¢˜
+echo [TIPS] æˆ–è€…å¯ä»¥å°†æ­¤å¤„æˆªå›¾æäº¤ issues
+echo ERR:NOT FOUND %2.bat
 goto end
 :end
 cd %startup_dir%
